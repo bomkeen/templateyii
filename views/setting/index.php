@@ -6,6 +6,8 @@
     <div class="panel panel-info">
         <div class="panel-heading">
             <h3>ตั้งค่าระบบ</h3>
+            <?php echo 'เข้าระบบโดย :: '.Yii::$app->user->identity->fullname;
+            ?>
         </div>
         <div class="panel-body">
             <div class="row">
