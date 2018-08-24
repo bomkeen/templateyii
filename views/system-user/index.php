@@ -61,6 +61,7 @@ Modal::end();
 
                     <?php
                     $gridColumns = [
+
                         [
                             'label' => 'เลขที่',
                             'attribute' => 'id',
@@ -100,6 +101,36 @@ Modal::end();
                             ],
                             'vAlign' => 'middle',
                             'format' => 'raw',
+                        ],
+                        [
+                            'class' => 'kartik\grid\ExpandRowColumn',
+                            'width' => '50px',
+                            'value' => function ($model, $key, $index, $column) {
+                                return GridView::ROW_COLLAPSED;
+                            },
+                            'detail' => function ($model, $key, $index, $column) {
+                                return //'hello world';//Yii::$app->controller->renderPartial('_expand-row-details', ['model'=>$model]);
+                                        '
+                  <div class="col-md-12">
+                  <table class="table table-striped">
+                    <thead>
+
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="col-md-3"><span class="glyphicon glyphicon-list"></span><b> CID</b></th>
+                      </tr>
+                      <tr>
+                        <td class="col-md-3">' . $model->cid . '</td>
+                       
+                      </tr>
+                    </tbody>
+                  </table>
+                  </div>
+                  ';
+                            },
+                            'headerOptions' => ['class' => 'kartik-sheet-style'],
+                            'expandOneOnly' => true
                         ],
                         [
                             'label' => 'ระดับการใช้งาน',
