@@ -105,6 +105,11 @@ Modal::end();
                         [
                             'class' => 'kartik\grid\ExpandRowColumn',
                             'width' => '50px',
+//                            'header' => ['class' => 'kartik-sheet-style'],
+                            'enableRowClick'=>TRUE,
+                            'expandTitle'=>'ข้อมูลเพิ่มเติม',
+                            'expandAllTitle'=>'ข้อมูลเพิ่มเติม',
+                           'expandIcon'=>'<span class="glyphicon glyphicon-hand-down"></span>',
                             'value' => function ($model, $key, $index, $column) {
                                 return GridView::ROW_COLLAPSED;
                             },
